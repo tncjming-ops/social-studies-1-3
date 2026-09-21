@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>國小社會科素養評量｜1-3 日治時期臺灣人的生活與習慣產生什麼變化？</title>
+  <style>
+    :root {
+      --primary: #0d9488;
+      --primary-light: #f0fdfa;
+      --primary-dark: #0f766e;
+      --success: #16a34a;
+      --success-light: #f0fdf4;
+      --danger: #dc2626;
+      --danger-light: #fef2f2;
+      --warning: #d97706;
+      --warning-light: #fffbeb;
+      --easy: #059669;
+      --medium: #d97706;
+      --hard: #dc2626;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --card-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --card-shadow-hover: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f8fafc;
+      color: var(--slate-800);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+      color: white;
+      padding: 24px 20px;
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .header-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .header-desc {
+      font-size: 0.95rem;
+      color: #ccfbf1;
+    }
+
+    .tab-nav {
+      display: flex;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .tab-btn {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tab-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .tab-btn.active {
+      background: white;
+      color: #0f766e;
+      border-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-container {
+      max-width: 1080px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+
+    .stats-bar {
+      background: white;
+      padding: 16px 20px;
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--primary);
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--slate-600);
+      font-weight: 600;
+    }
+
+    .stat-value {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--slate-800);
+    }
+
+    .progress-box {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .progress-bar-bg {
+      height: 10px;
+      background: var(--slate-100);
+      border-radius: 9999px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #0d9488, #10b981);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+
+    .filter-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--slate-600);
+    }
+
+    .filter-chip {
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--slate-200);
+      background: white;
+      color: var(--slate-700);
+      transition: all 0.2s;
+    }
+
+    .filter-chip:hover {
+      border-color: #94a3b8;
+      background: #f8fafc;
+    }
+
+    .filter-chip.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .filter-chip.chip-easy.active {
+      background: var(--easy);
+      border-color: var(--easy);
+    }
+
+    .filter-chip.chip-medium.active {
+      background: var(--medium);
+      border-color: var(--medium);
+    }
+
+    .filter-chip.chip-hard.active {
+      background: var(--hard);
+      border-color: var(--hard);
+    }
+
+    .question-card {
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--slate-200);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+
+    .question-card:hover {
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .q-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      gap: 10px;
+    }
+
+    .q-num-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .q-number {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .q-badges {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.3px;
+    }
+
+    .badge-easy {
+      background: #dcfce7;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+    }
+
+    .badge-medium {
+      background: #fef3c7;
+      color: #b45309;
+      border: 1px solid #fde68a;
+    }
+
+    .badge-hard {
+      background: #fee2e2;
+      color: #b91c1c;
+      border: 1px solid #fecaca;
+    }
+
+    .badge-bloom {
+      background: #ccfbf1;
+      color: #0f766e;
+      border: 1px solid #99f6e4;
+    }
+
+    .badge-page {
+      background: #f3e8ff;
+      color: #6b21a8;
+      border: 1px solid #e9d5ff;
+    }
+
+    .q-stem {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--slate-800);
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    .q-scenario {
+      background: #f8fafc;
+      border-left: 4px solid #0d9488;
+      padding: 10px 14px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+      color: #334155;
+      font-style: italic;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .options-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #ffffff;
+      border: 1.5px solid var(--slate-200);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 0.96rem;
+      color: var(--slate-800);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.15s ease;
+      width: 100%;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: #0d9488;
+      background: #f0fdfa;
+      transform: translateY(-1px);
+    }
+
+    .opt-key {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--slate-100);
+      color: var(--slate-700);
+      font-weight: 700;
+      font-size: 0.88rem;
+      flex-shrink: 0;
+      transition: all 0.15s;
+    }
+
+    .opt-text {
+      flex: 1;
+      padding-top: 1px;
+    }
+
+    .option-btn.selected {
+      border-color: #0d9488;
+      background: #ccfbf1;
+    }
+
+    .option-btn.selected .opt-key {
+      background: #0d9488;
+      color: white;
+    }
+
+    .option-btn.correct {
+      border-color: var(--success) !important;
+      background: var(--success-light) !important;
+      color: #14532d !important;
+      font-weight: 700;
+    }
+
+    .option-btn.correct .opt-key {
+      background: var(--success) !important;
+      color: white !important;
+    }
+
+    .option-btn.wrong {
+      border-color: var(--danger) !important;
+      background: var(--danger-light) !important;
+      color: #7f1d1d !important;
+      text-decoration: line-through;
+    }
+
+    .option-btn.wrong .opt-key {
+      background: var(--danger) !important;
+      color: white !important;
+    }
+
+    .explanation-box {
+      margin-top: 14px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 0.92rem;
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .explanation-box.show {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .exp-title {
+      font-weight: 800;
+      color: #0f766e;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .exp-content {
+      color: #334155;
+      line-height: 1.6;
+    }
+
+    .print-view, .solutions-view {
+      display: none;
+      background: white;
+      padding: 36px 40px;
+      border-radius: 14px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 30px;
+    }
+
+    .print-header {
+      text-align: center;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+
+    .print-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .print-meta-grid {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      font-size: 0.95rem;
+      margin-top: 12px;
+      font-weight: 600;
+    }
+
+    .print-q-item {
+      margin-bottom: 22px;
+      page-break-inside: avoid;
+    }
+
+    .print-q-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .print-q-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+      margin-left: 18px;
+      font-size: 0.92rem;
+    }
+
+    .print-btn-bar {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .action-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .action-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .action-btn-secondary {
+      background: #f1f5f9;
+      color: var(--slate-700);
+      border: 1px solid var(--slate-200);
+    }
+
+    .action-btn-secondary:hover {
+      background: #e2e8f0;
+      color: var(--slate-800);
+    }
+
+    .answer-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      margin-bottom: 24px;
+    }
+
+    .answer-table th, .answer-table td {
+      border: 1px solid #cbd5e1;
+      padding: 10px 12px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .answer-table th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--slate-800);
+    }
+
+    .sol-card {
+      border-left: 4px solid #0d9488;
+      background: #f8fafc;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 16px;
+      page-break-inside: avoid;
+    }
+
+    .sol-card-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    @media print {
+      header, .stats-bar, .filter-bar, .tab-nav, .print-btn-bar {
+        display: none !important;
+      }
+      body {
+        background: white !important;
+        padding: 0 !important;
+      }
+      .main-container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .print-view {
+        display: block !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+      .interactive-view, .solutions-view {
+        display: none !important;
+      }
+      .print-q-item {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="header-title-row">
+        <div>
+          <span class="header-badge">🏫 國小六年級社會領域｜108課綱素養導向評量</span>
+          <h1>單元 1-3：日治時期臺灣人的生活與習慣產生什麼變化？</h1>
+        </div>
+        <div>
+          <span class="header-badge" style="background: #10b981;">全卷 25 題標準測驗</span>
+        </div>
+      </div>
+      <p class="header-desc">
+        依據課本第 24～29 頁完整脈絡設計。涵蓋公共衛生設施（自來水/公共市場/學校衛生/平均壽命圖表）、標準時間制度與休閒風氣（公園/電影院/北投溫泉/登山遠足）、多元生活樣貌（郭雪湖《南街殷賑》/林百貨/波麗路西餐廳/多元服飾）與皇民化運動（國語家庭/改姓名/神社參拜/戰時物資配給/青年從軍/同化侷限）。
+      </p>
+
+      <div class="tab-nav">
+        <button class="tab-btn active" onclick="switchView('interactive')">
+          <span>🎯</span> 線上互動測驗挑戰
+        </button>
+        <button class="tab-btn" onclick="switchView('print')">
+          <span>📄</span> 學生紙筆測驗卷（可列印）
+        </button>
+        <button class="tab-btn" onclick="switchView('solutions')">
+          <span>🔑</span> 教師詳解與題庫手冊
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+
+    <!-- ==================== 模式一：線上互動測驗 ==================== -->
+    <div id="interactiveView" class="interactive-view">
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-label">作答進度</span>
+          <span class="stat-value" id="progressCount">0 / 25</span>
+        </div>
+        <div class="progress-box">
+          <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 600; color: #64748b;">
+            <span>完成率</span>
+            <span id="progressPercent">0%</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progressBar"></div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">目前答對題數</span>
+          <span class="stat-value" id="correctScore" style="color: var(--success);">0 題</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">目前得分（滿分100）</span>
+          <span class="stat-value" id="pointScore" style="color: var(--primary);">0 分</span>
+        </div>
+        <div>
+          <button class="action-btn action-btn-secondary" onclick="resetQuiz()">🔄 重新作答</button>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <span class="filter-label">難易度篩選：</span>
+        <button class="filter-chip active" onclick="filterDifficulty('all')">🌟 全部題目 (25)</button>
+        <button class="filter-chip chip-easy" onclick="filterDifficulty('easy')">🟢 基礎奠基 (10 題簡單)</button>
+        <button class="filter-chip chip-medium" onclick="filterDifficulty('medium')">🟡 情境理解 (10 題中等)</button>
+        <button class="filter-chip chip-hard" onclick="filterDifficulty('hard')">🔴 素養思辨 (5 題困難)</button>
+      </div>
+
+      <div id="questionsContainer"></div>
+    </div>
+
+    <!-- ==================== 模式二：紙筆考卷（A4 列印模式） ==================== -->
+    <div id="printView" class="print-view">
+      <div class="print-btn-bar">
+        <button class="action-btn" onclick="window.print()">🖨️ 列印考卷 (Ctrl + P)</button>
+        <button class="action-btn action-btn-secondary" onclick="switchView('interactive')">⬅️ 返回互動測驗</button>
+      </div>
+
+      <div class="print-header">
+        <div style="font-size: 1.1rem; font-weight: 700; color: #475569;">國小社會領域 六年級複習評量卷</div>
+        <h2 class="print-title">第 1 單元 1-3：日治時期臺灣人的生活與習慣產生什麼變化？</h2>
+        <div class="print-meta-grid">
+          <span>六年 _____ 班</span>
+          <span>座號：_______</span>
+          <span>姓名：_________________</span>
+          <span>得分：_______________</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px; font-weight: 700; font-size: 0.95rem; background: #f1f5f9; padding: 8px 12px; border-radius: 6px;">
+        ※ 測驗說明：共 25 題單選題（每題 4 分，滿分 100 分），每題請選出一個最適當的答案（選項為 1、2、3、4），並將答案填寫於題號括號內。
+      </div>
+
+      <div id="printQuestionsList"></div>
+    </div>
+
+    <!-- ==================== 模式三：教師手冊與完整解答卷 ==================== -->
+    <div id="solutionsView" class="solutions-view">
+      <div class="print-btn-bar">
+        <button class="action-btn" onclick="copyAllMarkdown()">📋 一鍵複製題庫純文字 (Markdown)</button>
+        <button class="action-btn action-btn-secondary" onclick="switchView('interactive')">⬅️ 返回互動測驗</button>
+      </div>
+
+      <h2 style="font-size: 1.4rem; font-weight: 800; color: #0f766e; margin-bottom: 12px;">
+        📖 教師備課手冊：25 題標準答案與布魯姆認知維度分析
+      </h2>
+
+      <h3 style="font-size: 1.1rem; font-weight: 700; margin-top: 16px; color: #334155;">【快速查對答案卡】</h3>
+      <table class="answer-table">
+        <thead>
+          <tr>
+            <th>題號</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight: 700; background: #f8fafc;">答案</td>
+            <td>4</td><td>2</td><td>1</td><td>3</td><td>3</td><td>2</td><td>3</td><td>1</td><td>1</td><td>4</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>題號</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight: 700; background: #f8fafc;">答案</td>
+            <td>2</td><td>1</td><td>2</td><td>3</td><td>2</td><td>3</td><td>1</td><td>3</td><td>3</td><td>4</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>題號</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th colspan="5" style="background: #f8fafc; color: #94a3b8;">（全卷完）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight: 700; background: #f8fafc;">答案</td>
+            <td>2</td><td>4</td><td>1</td><td>4</td><td>4</td>
+            <td colspan="5" style="background: #f8fafc; color: #94a3b8;">每題 4 分 / 滿分 100</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="font-size: 1.1rem; font-weight: 700; margin-top: 24px; margin-bottom: 16px; color: #334155;">
+        【逐題布魯姆指標與深度解析】
+      </h3>
+      <div id="solutionsDetailList"></div>
+    </div>
+
+  </main>
+
+  <script>
+    const quizData = [
+  {
+    "id": 1,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "記憶",
+    "page": "課本第 24 頁",
+    "stem": "日治初期臺灣常常流行霍亂、鼠疫等傳染病。總督府為了改善衛生並切斷疾病傳染源，在各大城鎮優先推動了哪一項重大公共工程？",
+    "options": [
+      "在每家每戶門口免費發放大批殺蟲劑",
+      "規定每個人天天出門都必須穿著塑膠雨衣",
+      "在全臺灣各大河川鋪滿金色防水地毯",
+      "興建自來水設施以提供潔淨用水並建立排水專用道"
+    ],
+    "answer": 4,
+    "explanation": "總督府聘請英國衛生工程顧問巴爾頓等人規劃現代自來水（水道）設施與下水道排水溝，大幅減少因飲用受污染井水而爆發的嚴重傳染病。"
+  },
+  {
+    "id": 2,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "理解",
+    "page": "課本第 24 頁",
+    "stem": "早期臺灣傳統市場多設在露天路邊，蒼蠅飛舞且肉品容易腐壞。日治時期總督府為了食物衛生，推動了哪一項市場改革？",
+    "options": [
+      "禁止民間吃肉，規定所有人天天只能吃蔬菜",
+      "設立室內公共市場，將攤販移至重視採光通風的建築中",
+      "規定買賣蔬菜只能在半夜十二點悄悄進行",
+      "規定每位菜販每天必須跑操場十圈才能做生意"
+    ],
+    "answer": 2,
+    "explanation": "總督府在各大城鎮興建水泥與紅磚結構的「室內公有消費市場」，要求攤販集中管理，並配備洗滌水槽與良好通風採光，改善飲食環境衛生。"
+  },
+  {
+    "id": 3,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "記憶",
+    "page": "課本第 25 頁",
+    "stem": "在日治時期的公學校裡，老師每天早上進教室第一件事，常常會要求小朋友做什麼以養成個人衛生習慣？",
+    "options": [
+      "檢查手指甲整潔、教導刷牙與定期健康檢查",
+      "檢查書包裡有沒有裝滿玩具恐龍和撲克牌",
+      "要求每位小朋友當場背誦完整本日本辭典",
+      "檢查誰帶了最多零用錢來學校分給大家"
+    ],
+    "answer": 1,
+    "explanation": "日治學校非常重視身體清潔衛生，每天晨間檢查學童手指甲、手帕、服裝，指導刷牙漱口，並由醫生定期到校測量視力與健康檢查。"
+  },
+  {
+    "id": 4,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "理解",
+    "page": "課本第 26 頁",
+    "stem": "日治時期總督府引進了現代時間觀念，打破了過去看太陽升落的作息。請問當時推行的新時間制度為何？",
+    "options": [
+      "規定一天有五十個小時，大家想睡就睡",
+      "規定一年只有春夏兩季，取消秋天與冬天",
+      "規定一天為二十四小時、一週七天，星期日為休假日",
+      "規定全臺灣人民只能在深夜工作，白天全部睡覺"
+    ],
+    "answer": 3,
+    "explanation": "日本引進西方的二十四小時制與星期制，配合火車時刻表與學校工廠作息，並將星期日定為休息日，逐步建立了規律有序的現代時間節奏。"
+  },
+  {
+    "id": 5,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "理解",
+    "page": "課本第 26 頁",
+    "stem": "日治時期總督府在火車站、市區重要路口或郵局鐘樓上設立了許多醒目的大時鐘。設立這些公共大鐘最主要的目的是什麼？",
+    "options": [
+      "當作晚上的街頭裝飾品散發五彩燈光",
+      "為了吸引鳥類在時鐘指針上面築巢產卵",
+      "提醒過往行旅與大眾精確時間，引導民眾建立守時習慣",
+      "為了測量夏季中午臺北市區的氣溫有多高"
+    ],
+    "answer": 3,
+    "explanation": "當時一般百姓家裡買不起昂貴懷錶或時鐘，街頭與車站的公共時鐘能隨時向民眾提示標準時間，引導大家遵守約定、養成守時的好習慣。"
+  },
+  {
+    "id": 6,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "記憶",
+    "page": "課本第 27 頁",
+    "stem": "隨著星期制與休假制度的推行，現代休閒觀念逐漸進入臺灣人的生活。下列哪一組休閒娛樂場所是日治時期才開始在臺灣普及的？",
+    "options": [
+      "傳統私塾、古代官府衙門、城隍廟廣場",
+      "公園、電影院、公共溫泉浴場",
+      "高科技太空發射中心、大型迪士尼樂園",
+      "高山專業滑雪場、貴族打獵森林園區"
+    ],
+    "answer": 2,
+    "explanation": "日治時期在各大都市開闢了現代化公園（如臺北新公園）、引進放映電影的「活動寫真館」（電影院），並在北投與草山開發了公共溫泉浴場。"
+  },
+  {
+    "id": 7,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "記憶",
+    "page": "課本第 28 頁",
+    "stem": "在西元 1930 年代的大稻埕街頭，年輕人約會或文人聚會時，最喜歡到哪一家播放西方古典音樂、充滿異國風情的知名西餐廳喝咖啡？",
+    "options": [
+      "美式炸雞連鎖快餐店",
+      "上海生煎包點心名店",
+      "波麗路餐廳",
+      "跨國美式漢堡專賣店"
+    ],
+    "answer": 3,
+    "explanation": "西元 1934 年在大稻埕開幕的「波麗路西餐廳」，引進高級音響播放法國拉威爾的〈波麗路〉古典樂，是當時文人雅士與青年男女熱門的聚會地標。"
+  },
+  {
+    "id": 8,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "記憶",
+    "page": "課本第 28 頁",
+    "stem": "臺南市著名的「林百貨」（俗稱五層樓仔）在西元 1932 年開幕時轟動全臺。這座現代百貨公司裡，最吸引大家大排長龍去體驗的先進設施是什麼？",
+    "options": [
+      "指針式載客電梯與鐵捲門設備",
+      "頂樓的直升機空中停機坪",
+      "室內大型雲霄飛車遊樂設施",
+      "會自動幫客人洗頭的機器人"
+    ],
+    "answer": 1,
+    "explanation": "林百貨是南臺灣第一座配備商用載客電梯（升降梯）的現代化百貨公司，電梯門上有半圓形指針顯示樓層，吸引無數民眾專程前來體驗「坐流籠」。"
+  },
+  {
+    "id": 9,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "記憶",
+    "page": "課本第 29 頁",
+    "stem": "西元 1937 年因為哪一件重大歷史事件爆發，導致總督府在臺灣加強推動「皇民化運動」，急著把臺灣人改造成效忠日本天皇的順民？",
+    "options": [
+      "中日戰爭爆發",
+      "第一次世界大戰正式結束",
+      "甲午戰爭正式簽約落幕",
+      "牡丹社事件引起各國交涉"
+    ],
+    "answer": 1,
+    "explanation": "西元 1937 年中日戰爭爆發，日本陷入長期對外戰事，為確保臺灣作為前進南洋的基地並動員臺灣人力物力，總督府開始全面推動「皇民化運動」。"
+  },
+  {
+    "id": 10,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "理解",
+    "page": "課本第 29 頁",
+    "stem": "皇民化運動期間，如果臺灣家庭通過審查，全家人平常都說流利日語，會被頒發「國語家庭」門牌。成為國語家庭可以享有什麼實際待遇？",
+    "options": [
+      "全家人可以隨時免費搭火箭前往月球度假",
+      "出門去任何商店買東西全都完全不用付錢",
+      "可以隨時命令日本警察到家裡幫忙打掃庭院",
+      "子女可進入日人就讀的學校就讀，或容易擔任官方職員"
+    ],
+    "answer": 4,
+    "explanation": "獲選為「國語家庭」的家庭在社會地位上受到優待，小孩能進入師資設備較佳的「小學校」讀書，戰時也能享有較充足的物資配給待遇。"
+  },
+  {
+    "id": 11,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "分析",
+    "page": "課本第 25 頁",
+    "stem": "課本指出：清朝時期來臺的外國人常抱怨臺灣傳染病嚴重；但到了日治中期，臺灣人的平均壽命已經大幅延長。造成這項轉變最關鍵的原因是什麼？",
+    "options": [
+      "臺灣的天氣突然變得跟日本北海道一樣終年下雪涼爽",
+      "改善公共衛生環境、引進自來水與推廣疫苗醫療之成效",
+      "臺灣人意外發現了可以長生不老的祕密仙丹靈藥",
+      "大家都躲在地下防空洞裡生活，完全不接觸新鮮空氣"
+    ],
+    "answer": 2,
+    "explanation": "自來水普及消滅了傷寒與霍亂等水媒傳染病，加上公衛檢查、隔離醫院與普遍接種疫苗，使臺灣居民的健康狀況與平均壽命大幅躍升。"
+  },
+  {
+    "id": 12,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "應用",
+    "page": "課本第 24 頁",
+    "scenario": "歷史探究：日本官員後藤新平特別聘請英國衛生工程專家巴爾頓來臺調查水源，隨後在臺北公館溪畔興建了大型沈澱池與抽水機房。",
+    "stem": "請問巴爾頓等人為臺北市民規劃興建的這項關鍵民生設施是什麼？",
+    "options": [
+      "現代化水道（自來水廠及水源地取水淨水）設施",
+      "專門把淡水河河水調配成清涼汽水的大型工廠",
+      "用來抽取地底下石油與天然氣的開採煉油廠",
+      "給全臺北市市民免費划船游泳的人工大湖泊"
+    ],
+    "answer": 1,
+    "explanation": "巴爾頓與學生濱野彌四郎規劃了臺北水道（今自來水博物館園區），以科學方法沈澱、過濾與消毒溪水，將乾淨自來水經管線送達千家萬戶。"
+  },
+  {
+    "id": 13,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "應用",
+    "page": "課本第 26 頁",
+    "scenario": "生活故事：農民阿火習慣看太陽影子決定出門時間。有一天他要搭上午 9 點的火車去臺中，結果慢吞吞走到車站時已經 9 點 20 分，火車早就開走了。",
+    "stem": "阿火這次錯過班車的慘痛經驗，最能說明當時社會正在建立什麼樣的新觀念？",
+    "options": [
+      "火車司機非常喜歡隨便更改發車時間不可信任",
+      "會因為無法趕上精準按時刻發車的火車而延誤所有行程",
+      "走路出門一定比搭乘蒸汽火車還要更快更準時",
+      "車站人員故意針對阿火個人，不讓他上車買票"
+    ],
+    "answer": 2,
+    "explanation": "現代交通工具講求分秒不差的時刻表；火車的通車打破了農業社會隨性自在的「看天作息」，迫使人們必須看懂時鐘並養成精確守時的習慣。"
+  },
+  {
+    "id": 14,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "理解",
+    "page": "課本第 27 頁",
+    "stem": "日治時期的公學校每年都會為高年級學童舉辦「修學旅行」（類似今日的校外畢業旅行）。學校安排學生搭火車去參觀日月潭或各大工廠，最主要的教育用意是？",
+    "options": [
+      "只是為了讓全體老師能放長假去風景區悠閒釣魚",
+      "打算把調皮的學生偷偷留在高山森林裡野外求生",
+      "培養團體生活紀律，並讓學生親自實地認識臺灣的地理、動植物與產業",
+      "為了讓學生幫鐵路局擦乾淨沿途行駛的火車車廂"
+    ],
+    "answer": 3,
+    "explanation": "修學旅行融合了現代自然地理教育與集體紀律生活，讓學生實地印證課堂知識、增廣見聞，體會臺灣各地的風土民情與產業建設。"
+  },
+  {
+    "id": 15,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "分析",
+    "page": "課本第 28 頁",
+    "stem": "著名畫家郭雪湖的名作《南街殷賑》，描繪了西元 1930 年代臺北大稻埕中元普渡的繁榮景象。這幅畫最特別的歷史文化意涵是什麼？",
+    "options": [
+      "畫中只有身穿和服的日本軍官，完全看不到任何臺灣民眾",
+      "畫家利用西式技法融合想像力，生動展現臺灣本土傳統節慶與多元現代文明並存的盛況",
+      "畫中所有的店面全都倒閉荒廢，整條街上一片冷清寂靜",
+      "畫家畫的其實是日本東京的歌舞伎町，跟臺灣毫無關聯"
+    ],
+    "answer": 2,
+    "explanation": "《南街殷賑》以縱向誇張手法描繪霞海城隍廟前迪化街的喧囂，畫中既有傳統中元旗幟，也有西式洋樓、鐘錶店、咖啡店招牌，生動體現了多元交融的文化景觀。"
+  },
+  {
+    "id": 16,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "應用",
+    "page": "課本第 28 頁",
+    "stem": "走在西元 1930 年代繁華的臺北榮町或大稻埕街頭，你最可能目睹到何種多元並存的服飾風景？",
+    "options": [
+      "全體市民不分老幼男女，一律被強制穿上厚重太空衣",
+      "所有百姓都身穿清朝將軍的鐵甲大袍在烈日下行走",
+      "身穿優雅和服的日本婦女、穿著俐落西裝洋裝的青年與著傳統漢服的長者並存",
+      "街上所有逛街民眾全都必須穿著白色短褲參加路跑"
+    ],
+    "answer": 3,
+    "explanation": "西服洋裝代表現代進步，和服代表統治階層的文化風格，而長衫布衣是傳統漢人生活習慣，三者在街頭同時出現，展現出當時多層次的社會面貌。"
+  },
+  {
+    "id": 17,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "理解",
+    "page": "課本第 29 頁",
+    "stem": "二次大戰爆發後，總督府在臺灣厲行推動「皇民化運動」。下列哪一項措施是當時政府強制臺灣人配合的做法？",
+    "options": [
+      "獎勵說日語、改換日本姓名、強制作息參拜日本神社與改穿和服",
+      "強迫所有漢人學童天天背誦原住民族各族母語歌曲",
+      "規定全臺灣的佛寺每天都要舉辦煙火晚會慶祝神明聖誕",
+      "要求每位中學生每天用繁體中文毛筆書寫論語心得"
+    ],
+    "answer": 1,
+    "explanation": "為使臺灣人效忠日本天皇並投入戰事，總督府透過行政力量推動「皇民化」，企圖藉由語言、姓名、信仰與服飾的全面改造，抹煞臺灣本土文化認同。"
+  },
+  {
+    "id": 18,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "理解",
+    "page": "課本第 29 頁",
+    "stem": "太平洋戰爭後期物資極度短缺，民生用品皆採定量配給。當時被總督府認定為「國語家庭」的家戶，在生活中能享有什麼最重要的好處？",
+    "options": [
+      "每個月可以免費獲贈一輛最新型的進口敞篷跑車",
+      "家裡所使用的自來水與電力可以永遠完全免繳費用",
+      "能享有較充足的民生物資配給優先權，生活品質較有保障",
+      "全家人出門搭乘火車時可以自由坐在火車車頂上兜風"
+    ],
+    "answer": 3,
+    "explanation": "戰時物資配給依照家庭身分有所差異，國語家庭能分配到更多米、糖、肉品與日常必需品，成為當時許多家庭為了現實生存而努力爭取的標籤。"
+  },
+  {
+    "id": 19,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "分析",
+    "page": "課本第 29 頁",
+    "stem": "戰爭末期總督府實施志願兵與徵兵制，有些臺灣青年甚至熱烈報名奔赴南洋戰場。促使這些青年主動參軍報國的背後心理，下列何者最符合歷史真實？",
+    "options": [
+      "覺得去熱帶南洋島嶼渡假游泳曬太陽非常輕鬆愜意",
+      "早就跟同盟國軍隊約好要在海島上合夥開連鎖餐廳",
+      "企盼藉由報效國家或在戰場上建立戰功，打破二等國民歧視並改善家庭地位",
+      "純粹只是因為貪玩好奇，完全不知道戰場上會流血犧牲"
+    ],
+    "answer": 3,
+    "explanation": "臺灣人長期在升學、就業與法律上遭受不平等對待；部分青年在皇民化宣傳下，渴望透過參軍立功證明自己的勇氣與忠誠，打破被視為次等公民的屈辱。"
+  },
+  {
+    "id": 20,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "分析",
+    "page": "課本第 27 頁",
+    "stem": "日治時期引進了現代「星期制」並將週日定為休假日。這項時間規律對臺灣社會的休閒生活帶來了何種深刻的改變？",
+    "options": [
+      "所有人在星期日都要躲在黑暗房間裡睡覺整整一天",
+      "造成全島所有工廠在週末全數倒閉無法開工",
+      "讓全體國民在星期日都被強制集中到防空洞集合",
+      "人民從過去終年勞碌無休的傳統生活，逐漸懂得利用假日進行休閒與身心調養"
+    ],
+    "answer": 4,
+    "explanation": "傳統農業社會只有過年或廟會才能休假；星期制的建立確立了工作與休閒分明的觀念，帶動了假日踏青、逛公園、看電影等現代休閒文化。"
+  },
+  {
+    "id": 21,
+    "difficulty": "hard",
+    "diffName": "困難 🔴",
+    "bloom": "想法評判",
+    "page": "課本第 24、25 頁",
+    "stem": "日治時期的公共衛生措施雖然大幅消滅了鼠疫與霍亂，但常伴隨警察挨家挨戶突擊檢查、翻箱倒櫃甚至隨意處罰。從現代人權角度審視，這種公衛體制隱含了什麼爭議？",
+    "options": [
+      "執法警察態度太過軟弱，導致民眾根本不配合清潔",
+      "現代公衛被高度行政化與軍警化，成為統治者監視私人生活與壓制社會的權力工具",
+      "打掃街道與倒垃圾對消滅傳染病完全沒有任何醫學效果",
+      "老百姓完全自願天天接受警察進屋搜查房間毫無怨言"
+    ],
+    "answer": 2,
+    "explanation": "總督府將公共衛生與警察權力緊密結合，警察以維護衛生為名隨時介入民宅、侵犯隱私與人身自由，公衛措施成為鞏固殖民高壓監控的另一種形式。"
+  },
+  {
+    "id": 22,
+    "difficulty": "hard",
+    "diffName": "困難 🔴",
+    "bloom": "分析",
+    "page": "課本第 26 頁",
+    "stem": "總督府在街頭與車站設立大時鐘，大力宣導「時間就是金錢」與「遵守時刻」。從現代社會學視角分析，這種嚴格的守時要求背後最主要的作用是什麼？",
+    "options": [
+      "單純為了讓日本進口鐘錶商大發利市賺取暴利",
+      "為了在火車站前廣場天天舉辦計時跑步比賽",
+      "鼓勵大家天天抬頭看時鐘以舒緩頸椎疲勞痠痛",
+      "將農業社會隨性自在的「自然作息」，改造成符合現代工廠機器與官僚體制運轉的「守時勞動力」"
+    ],
+    "answer": 4,
+    "explanation": "現代工業與鐵路需要所有人在精確時間就位運轉；總督府推廣標準時間，本質是將隨興的傳統農民改造成適應現代工廠分工、守紀律的現代勞工。"
+  },
+  {
+    "id": 23,
+    "difficulty": "hard",
+    "diffName": "困難 🔴",
+    "bloom": "想法評判",
+    "page": "課本第 29 頁",
+    "stem": "皇民化運動期間，總督府強制要求臺灣人拆除家中祖先神主牌、參拜日本神社並禁用母語。以現代「多元文化與信仰自由」的普世價值來反思，這項政策最粗暴的錯誤何在？",
+    "options": [
+      "粗暴剝奪了族群的文化認同、母語使用權以及世代傳承的信仰自由與歷史記憶",
+      "浪費了太多木材去修建全臺灣各地的日本神社",
+      "造成日本進口和服在臺灣賣得太昂貴百姓買不起",
+      "讓傳統廟會煙火放得太少，使得節慶氣氛不夠熱鬧"
+    ],
+    "answer": 1,
+    "explanation": "母語、家族祖先與信仰是族群文化的靈魂；皇民化運動企圖用強制力消滅臺灣人的語言與記憶，嚴重侵害了基本人權與文化尊嚴。"
+  },
+  {
+    "id": 24,
+    "difficulty": "hard",
+    "diffName": "困難 🔴",
+    "bloom": "想法評判",
+    "page": "課本第 28 頁",
+    "stem": "郭雪湖畫筆下的迪化街，在中元普渡時依然人山人海，滿街都是臺灣本土傳統商號與喧囂人群。這幅畫最足以展現出當時臺灣社會的何種文化韌性？",
+    "options": [
+      "臺灣民眾完全無視任何法規，整天在街上爭吵打架",
+      "臺灣商人其實全都不想做生意，只喜歡湊熱鬧看戲",
+      "大稻埕街頭所有店面全部被總督府強迫停業倒閉",
+      "彰顯出臺灣本土市井社會在面對外來政權壓力下，依然蓬勃繁榮、堅守鄉土民俗並積極吸納世界新知的文化生命力"
+    ],
+    "answer": 4,
+    "explanation": "面對總督府推行的現代化與日本文化衝擊，臺灣民間市井並未消亡，而是在大稻埕等商業據點生機盎然地融合中西日元素，展現堅毅的本土文化生命力。"
+  },
+  {
+    "id": 25,
+    "difficulty": "hard",
+    "diffName": "困難 🔴",
+    "bloom": "單元統整",
+    "page": "課本第 24～29 頁全單元",
+    "stem": "【單元大總結】綜觀日治時期臺灣人的生活轉變：自來水提升了健康壽命、標準時間建立了守時觀念，但到了戰爭末期卻遭受強迫改姓與文化抹煞。若要客觀總結這段生活變遷史，下列何項評述最深刻？",
+    "options": [
+      "這是一段完全幸福無缺的歲月，臺灣人毫無任何壓抑與遺憾",
+      "現代衛生與時間習慣對臺灣人的文明進步毫無實質幫助",
+      "臺灣老百姓在統治第一天起就全盤自願拋棄了自己的傳統風俗",
+      "這是一場充滿「被動現代化與文化壓迫」雙重特質的深刻變遷：臺灣人民在威權規訓下融入了近代文明體系，但同時也在靈魂深處承受著嚴酷的文化認同撕裂與尊嚴代價"
+    ],
+    "answer": 4,
+    "explanation": "近代生活方式雖然提升了臺灣的物質文明與衛生水平，但臺灣人是在外來殖民統治的強迫規範下被動接受，並在皇民化期間承受了極大的精神與文化創傷。"
+  }
+];
+
+    const userAnswers = {};
+    let currentFilter = 'all';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderInteractiveQuestions();
+      renderPrintQuestions();
+      renderSolutionsDetail();
+      updateStats();
+    });
+
+    function switchView(viewName) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('interactiveView').style.display = 'none';
+      document.getElementById('printView').style.display = 'none';
+      document.getElementById('solutionsView').style.display = 'none';
+
+      if (viewName === 'interactive') {
+        document.getElementById('interactiveView').style.display = 'block';
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+      } else if (viewName === 'print') {
+        document.getElementById('printView').style.display = 'block';
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+      } else if (viewName === 'solutions') {
+        document.getElementById('solutionsView').style.display = 'block';
+        document.querySelectorAll('.tab-btn')[2].classList.add('active');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function filterDifficulty(diff) {
+      currentFilter = diff;
+      document.querySelectorAll('.filter-chip').forEach(chip => chip.classList.remove('active'));
+      event.target.classList.add('active');
+      renderInteractiveQuestions();
+    }
+
+    function renderInteractiveQuestions() {
+      const container = document.getElementById('questionsContainer');
+      container.innerHTML = '';
+
+      const filtered = quizData.filter(q => {
+        if (currentFilter === 'all') return true;
+        return q.difficulty === currentFilter;
+      });
+
+      filtered.forEach(q => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+        card.id = `card-q-${q.id}`;
+
+        const diffBadgeClass = q.difficulty === 'easy' ? 'badge-easy' : (q.difficulty === 'medium' ? 'badge-medium' : 'badge-hard');
+        let scenarioHtml = q.scenario ? `<div class="q-scenario">${q.scenario}</div>` : '';
+
+        let optionsHtml = '<div class="options-grid">';
+        q.options.forEach((optText, idx) => {
+          const optNum = idx + 1;
+          const isSelected = userAnswers[q.id] === optNum;
+          const isAnswered = userAnswers[q.id] !== undefined;
+
+          let btnClass = 'option-btn';
+          if (isAnswered) {
+            if (optNum === q.answer) {
+              btnClass += ' correct';
+            } else if (isSelected && optNum !== q.answer) {
+              btnClass += ' wrong';
+            }
+          }
+
+          optionsHtml += `
+            <button class="${btnClass}" onclick="handleSelectOption(${q.id}, ${optNum})" ${isAnswered ? 'disabled' : ''}>
+              <span class="opt-key">${optNum}</span>
+              <span class="opt-text">${optText}</span>
+            </button>
+          `;
+        });
+        optionsHtml += '</div>';
+
+        const isAnswered = userAnswers[q.id] !== undefined;
+        const expShowClass = isAnswered ? 'show' : '';
+
+        const explanationHtml = `
+          <div class="explanation-box ${expShowClass}" id="exp-${q.id}">
+            <div class="exp-title">
+              <span>💡 【素養解析】</span>
+              <span style="font-weight: 700; color: #16a34a; margin-left: 6px;">正確解答：選項 (${q.answer})</span>
+            </div>
+            <div class="exp-content">${q.explanation}</div>
+          </div>
+        `;
+
+        card.innerHTML = `
+          <div class="q-header">
+            <div class="q-num-box">
+              <span class="q-number">第 ${q.id} 題</span>
+              <span class="badge ${diffBadgeClass}">${q.diffName}</span>
+            </div>
+            <div class="q-badges">
+              <span class="badge badge-bloom">🧠 ${q.bloom}</span>
+              <span class="badge badge-page">📖 ${q.page}</span>
+            </div>
+          </div>
+          ${scenarioHtml}
+          <div class="q-stem">${q.stem}</div>
+          ${optionsHtml}
+          ${explanationHtml}
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function handleSelectOption(questionId, selectedOpt) {
+      if (userAnswers[questionId] !== undefined) return;
+      userAnswers[questionId] = selectedOpt;
+      renderInteractiveQuestions();
+      updateStats();
+    }
+
+    function updateStats() {
+      const answeredCount = Object.keys(userAnswers).length;
+      const total = quizData.length;
+      let correctCount = 0;
+
+      quizData.forEach(q => {
+        if (userAnswers[q.id] === q.answer) {
+          correctCount++;
+        }
+      });
+
+      const percent = Math.round((answeredCount / total) * 100);
+      const points = Math.round((correctCount / total) * 100);
+
+      document.getElementById('progressCount').innerText = `${answeredCount} / ${total}`;
+      document.getElementById('progressPercent').innerText = `${percent}%`;
+      document.getElementById('progressBar').style.width = `${percent}%`;
+      document.getElementById('correctScore').innerText = `${correctCount} 題`;
+      document.getElementById('pointScore').innerText = `${points} 分`;
+    }
+
+    function resetQuiz() {
+      if (confirm("確定要清除所有作答紀錄重新開始嗎？")) {
+        for (const key in userAnswers) {
+          delete userAnswers[key];
+        }
+        renderInteractiveQuestions();
+        updateStats();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function renderPrintQuestions() {
+      const printContainer = document.getElementById('printQuestionsList');
+      printContainer.innerHTML = '';
+
+      quizData.forEach(q => {
+        const item = document.createElement('div');
+        item.className = 'print-q-item';
+
+        let scenarioText = q.scenario ? `<div style="font-size: 0.92rem; color: #475569; margin: 4px 0 6px 0; padding: 4px 8px; background: #f8fafc; border-left: 3px solid #64748b;">${q.scenario}</div>` : '';
+
+        item.innerHTML = `
+          <div class="print-q-title">
+            ( &nbsp; &nbsp; ) ${q.id}. ${q.stem}
+          </div>
+          ${scenarioText}
+          <div class="print-q-options">
+            <div>(1) ${q.options[0]}</div>
+            <div>(2) ${q.options[1]}</div>
+            <div>(3) ${q.options[2]}</div>
+            <div>(4) ${q.options[3]}</div>
+          </div>
+        `;
+        printContainer.appendChild(item);
+      });
+    }
+
+    function renderSolutionsDetail() {
+      const solContainer = document.getElementById('solutionsDetailList');
+      solContainer.innerHTML = '';
+
+      quizData.forEach(q => {
+        const card = document.createElement('div');
+        card.className = 'sol-card';
+        card.innerHTML = `
+          <div class="sol-card-header">
+            <span>第 ${q.id} 題【${q.diffName}】｜ 正確解答：(${q.answer})</span>
+            <span style="font-size: 0.85rem; color: #475569;">${q.bloom}・${q.page}</span>
+          </div>
+          <div style="font-weight: 600; margin-bottom: 6px; font-size: 0.95rem;">${q.stem}</div>
+          <div style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+            (1) ${q.options[0]} &nbsp; | &nbsp; (2) ${q.options[1]} &nbsp; | &nbsp; (3) ${q.options[2]} &nbsp; | &nbsp; (4) ${q.options[3]}
+          </div>
+          <div style="font-size: 0.92rem; color: #0f766e; line-height: 1.6; background: white; padding: 8px 12px; border-radius: 6px; border: 1px solid #e2e8f0;">
+            <strong>🎯 素養深度解析：</strong>${q.explanation}
+          </div>
+        `;
+        solContainer.appendChild(card);
+      });
+    }
+
+    function copyAllMarkdown() {
+      let mdText = `# 國小六年級社會科素養評量題庫\n## 單元 1-3：日治時期臺灣人的生活與習慣產生什麼變化？\n\n`;
+      quizData.forEach(q => {
+        mdText += `### 第 ${q.id} 題【難度：${q.diffName}｜${q.bloom}｜${q.page}】\n`;
+        if (q.scenario) mdText += `> ${q.scenario}\n\n`;
+        mdText += `**題目**：${q.stem}\n`;
+        mdText += `1. ${q.options[0]}\n`;
+        mdText += `2. ${q.options[1]}\n`;
+        mdText += `3. ${q.options[2]}\n`;
+        mdText += `4. ${q.options[3]}\n\n`;
+        mdText += `**【正確解答】**：${q.answer}\n`;
+        mdText += `**【素養解析】**：${q.explanation}\n\n---\n\n`;
+      });
+
+      navigator.clipboard.writeText(mdText).then(() => {
+        alert("✅ 25 題完整題目、選項與詳解已複製到剪貼簿！可直接貼至 Word 或教學文件使用。");
+      }).catch(err => {
+        alert("複製失敗，請手動複製。");
+      });
+    }
+  </script>
+</body>
+</html>
